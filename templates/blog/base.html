@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{%load static%}
+{%load blog_tags%}
+<html lang="en" dir="ltr">
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/blog7.css"%}">
+    <title>{%block title_block %}{%endblock%}</title>
+</head>
+<body>
+<div class="content">
+    {%block content%}{%endblock%}
+</div>
+
+
+
+<!--<h1 style="border:2px solid Tomato;">Hello World</h1>-->
+<div class="sidebar">
+    <h2>SHAILESH'S YADAV BLOG</h2>
+
+   <span><h5>&nbsp Here You can see latest Post Information!...</h5></span>
+    <p>&nbsp The Total number of published posts upto today: <span id="pcount" >{%total_posts%}</span></p>
+    <h5> &nbsp Latest Posts:</h5>{%show_latest_posts%}
+
+
+</div>
+</body>
+</html>
+
+

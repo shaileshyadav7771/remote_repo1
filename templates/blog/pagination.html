@@ -1,0 +1,32 @@
+
+
+<div class="paginator">
+<!--    ##for previous-->
+    {% if page.has_previous %}
+       <a href="?page={{post_list.previous_page_number}}">Previous Page</a>&nbsp&nbsp
+<!--    here query string will ?page will check-->
+    {%endif%}
+
+<!--    ###for next page####-->
+    <span> Page {{page.number}} of {{page.paginator.num_pages}}</span>&nbsp&nbsp&nbsp
+    {% if page.has_next %}
+    <a href="?page={{post_list.next_page_number}}">Next Page</a>&nbsp&nbsp&nbsp
+<!--    here query string will ?page will check-->
+    {%endif%}
+
+</div>
+<!--#Here html file name we can take anything...we need to include this inside post_list.html-->
+
+
+
+
+
+
+<!--    <span class="current">-->
+<!--            Page {{ page.number }} of {{ page.paginator.num_pages }}.-->
+<!--        </span>-->
+
+<!--        {% if page.has_next %}-->
+<!--            <a href="?page={{ page.paginator.num_pages }}">last &raquo;</a>-->
+<!--        {% endif %}-->
+<!--    </span>-->

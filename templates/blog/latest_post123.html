@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a:hover {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+<ul>
+    {%for post in latest_posts%}
+    <li>
+        <a href="{{post.get_absolute_url}}"><h2>{{post.title}}</h2></a>
+    </li>
+    {%endfor%}
+</ul>
+
+
+</body>
+</html>

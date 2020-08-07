@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+
+{% block title_block %}SHAILESH'S BLOG HOMEPAGE{%endblock%}
+
+{%if tag%}
+   <h3>Post tagged with '{{tag.name}}'</h3>
+{%endif%}
+
+{%block content%}
+<div align="center" class="container">
+    <div1 class="jumbotron">
+        <h1>SHAILESH's Blog</h1>&nbsp
+
+    </div1>
+</div>
+{% for post in post_list %}
+<a href="{{post.get_absolute_url}}"><h2>{{post.title}}</h2></a>
+<p id='date'>Published on {{post.publish}} by {{post.author|title}}</p><!--#Filter title-->
+<!--##Here we will add tag###-->
+
+<!--    now when we click on tag then details shld be shown so need to use reverse naming concept.-->
+    <div class="tagbox">
+    {%for tag in post.tags.all%}
+    <a href="{%url "post_list_by_tag_name" tag.slug %}" class='btn btn-success'>{{tag.name}}</a>
+<!--    {%if not forloop.last%},{%endif%}-->
+      {%endfor%}
+</div>
+<!--    means with argument tag.slug please open post_list_by_tag_name url..(reverse name concept.:))-->
+<!--    #above line is for comma seperation between tags:)-->
+</p>
+{{post.body|truncatewords:30|linebreaks}}
+{%endfor%}
+
+{% include 'blog/pagination.html' with page=post_list%}
+{%endblock%}

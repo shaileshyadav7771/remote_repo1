@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html'%}
+
+{%block title_block %}
+{{post.title}}
+{%endblock%}
+
+
+{%block content%}
+<h1>{{post.title}}</h1>
+<p id='date'>Published on {{post.publish}} by {{post.author|title}}</p>
+{{post.body|linebreaks}}<br>
+
+<div class="container1" align="center">
+    <!--####Now here below to detail post i'll enter email button href which will open post and email form.-->
+    <a href="/{{post.id}}/share" class="btn btn-lg btn-success">Share Post By Email</a>
+    <!--Note: target_blank will open page in new tab.-->
+</div>
+
+<!--#######adding comment section below to post######-->
+{% with comments.count as comment_count %}
+<h2>{{comments_count}} Comment{{comments_count|pluralize}}</h2>
+{%endwith%}
+
+<!--#now lets display comments:)-->
+{%if comments%}
+{%for comment in comments%}
+<p id='ch'> comment {{forloop.counter}} by {{comment.name}} on {{comment.created}}</p>
+<div class="commentbody">{{comment.body|linebreaks}}</div><hr>
+{%endfor%}
+
+{%else%}
+<p>There is no Comment Yet!!You are the first to comment on this..</p>
+{%endif%}
+<!--###Now if cooment is Submitted then we need to display form to end user.-->
+
+{%if csubmit%}
+<p>Hey!,Your comment has submitted successfully. </p>
+    {%else%}
+<!--          <p id="submit1">Please submit your comment.</p>-->
+                <form method="post">
+              {{form.as_p}}
+              {%csrf_token%}
+                    <input type="submit" name="" class='btn btn-lg btn-success' value="Submit Your Comment">
+                </form>
+  {%endif%}
+
+{%endblock%}
+

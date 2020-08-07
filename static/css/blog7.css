@@ -1,0 +1,90 @@
+a:hover {
+  background-color: black;
+}
+
+#ch{
+color:black;
+font-size:12px;
+ font-style:italic;
+ border-bottom: 2px solid red;
+ }
+
+
+#pcount{
+font-size:40px;
+color:#1F59DE;
+font-weight: bold;
+}
+
+#date{
+ color:black;
+font-size:12px;
+ font-style:italic;
+ }
+
+
+.content
+{
+width:10%;
+float:left;
+padding: 0 0 0 12px; background:#ffffff; height:10%
+from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+
+
+.sidebar{
+color:red;
+width:10%;
+float:right;
+padding: 0 0 0 7px; background:#000000;
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+h1{
+text-align:center;
+color:green;
+border-bottom:7px solid #bbb; background:#ffff00;
+width:100%;
+
+}
+
+.container{
+witdh:70%;
+background:red;
+border-bottom:1px light ##40ff00;
+ from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+
+#date{
+color:#000000; font-size:12px; font-style:italic;}
+
+input[type='text','comment','email']{
+background:black;
+color:yellow;
+}
+
+span{
+color:#f542f5;}
+
+#submit1{color:#34c6eb;
+}
+
+#submit2{color:#4034eb;
+
+}
+
